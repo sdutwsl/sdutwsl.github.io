@@ -2,31 +2,90 @@
 <html>
 <head>
 	<title>👴的博客</title>
+	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 	<style type="text/css">
+		html,body{
+			background-color: #f5fefe;
+			color:#333333;
+			font-family: Italiana;
+			height: 100%;
+		}
+
 		h1{
 			text-align: center;
+		}
+
+		.abshead{
+			position: absolute;
+			top:30%;
+			width: 100%;
+		}
+		#title{
+			display: block;
+			height: 100%;
+			min-height: 50%;
+		}
+
+		.arrow{
+			width: 100%;
+			position: absolute;
+			bottom: 30px;
+			text-align: center;
+
+		}
+		.down-arrow::after {
+		    display: inline-block;
+		    content: " ";
+		    height: 18px;
+		    width: 18px;
+		    border-width: 0 2px 2px 0;
+		    border-color: #999999;
+		    border-style: solid;
+		    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+		    transform-origin: center;
+		    transition: transform .3s;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -10px;
+		}
+		.down-arrow:hover::after {
+		    border-color: #333333; 
+		}
+
+		#content{
+			height: 300%;
 		}
 	</style>
 </head>
 <body>
-<h1>Welcome to 👴 の <em>Blog!</em></h1>
-<ol>
-	<h2>Net</h2>
-</ol>
-<ol>
-	<h2>OS</h2>
-</ol>
-<ol>
-	<h2>Alg</h2>
-</ol>
-<ol>
-	<h2>Dev</h2>
-</ol>
-<ol>
-	<h2>Ops</h2>
-</ol>
-<ol>
-	<h2>Proj</h2>
-</ol>
+	<div id="title">
+		<div class="abshead">
+			<h1>Welcome to 👴 の <em>Blog!</em></h1>
+		</div>
+		<div class="arrow">
+			<a href="javascript:window.scrollTo({top:document.body.clientHeight,behavior: 'smooth'})"><div class="down-arrow"></div></a>
+		</div>
+	</div>
+	<div id="content">
+		<ol>
+			<h2>Net</h2>
+		</ol>
+		<ol>
+			<h2>OS</h2>
+		</ol>
+		<ol>
+			<h2>Dev</h2>
+		</ol>
+		<ol>
+			<h2>Ops</h2>
+		</ol>
+		<ol>
+			<h2>Proj</h2>
+		</ol>
+	</div>
+	<script type="text/javascript">
+		console.log("Welcome!!!!!!!!!!!!!!")
+	</script>
 </body>
 </html>
