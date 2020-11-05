@@ -31,9 +31,22 @@
 			position: absolute;
 			bottom: 30px;
 			text-align: center;
-
+            animation: jump 2s infinite;
 		}
-		.down-arrow::after {
+        
+        @keyframes jump {  
+           0% {  
+               transform: translate(0px, 0px);  
+           }  
+           50% {  
+               transform: translate(0px, -10px);  
+           }  
+           100% {  
+               transform: translate(0px, 0px);  
+           }  
+        }
+		
+        .down-arrow::after {
 		    display: inline-block;
 		    content: " ";
 		    height: 18px;
