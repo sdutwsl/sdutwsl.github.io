@@ -4,6 +4,15 @@ body {
     color: #333333;
     font-family: Italiana;
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("../assets/dcby.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h1 {
@@ -12,9 +21,10 @@ h1 {
 
 .abshead {
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 0;
     right: 0;
+    color: aliceblue;
 }
 
 #title {

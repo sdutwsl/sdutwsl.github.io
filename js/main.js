@@ -7,7 +7,7 @@ welcome()
 
 /********************* 滚动到下一页 ****************************************/
 function second_page(){
-    window.scrollTo({top:document.body.clientHeight,behavior:"smooth"})
+    window.scrollTo({top:(document.body.clientHeight),behavior:"smooth"})
 }
 
 /****************** 滚动跳页 ******************************/
