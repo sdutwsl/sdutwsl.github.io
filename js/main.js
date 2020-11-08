@@ -37,15 +37,15 @@ function scroll_jump(scroll_pos) {
   }
 }
 //节流
-window.addEventListener('scroll', function(e) {
-  last_known_scroll_position = window.scrollY;
+// window.addEventListener('scroll', function(e) {
+//   last_known_scroll_position = window.scrollY;
 
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      scroll_jump(last_known_scroll_position);
-      ticking = false;
-    });
+//   if (!ticking) {
+//     window.requestAnimationFrame(function() {
+//       scroll_jump(last_known_scroll_position);
+//       ticking = false;
+//     });
 
-    ticking = true;
-  }
-});
+//     ticking = true;
+//   }
+// });
