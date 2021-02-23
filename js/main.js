@@ -36,6 +36,20 @@ function scroll_jump(scroll_pos) {
     in_jumping-false
   }
 }
+window.addEventListener("load",()=>{
+	fetch("/API/V1/GetArticles").then(res=>res.json()).catch(err=>console.log).then(res=>{
+		let ul=document.createElement("ul")
+		for(let i of res){
+			let li=document.createElement("li")
+			let a=document.createElement("a")
+			a.href="/Article.html?id="+i.ID
+			a.innerText=i.Title
+			li.appendChild(a)
+			ul.appendChild(li)
+		}
+		document.querySelector("#content>ol").appendChild(ul)
+	})
+})
 //节流
 // window.addEventListener('scroll', function(e) {
 //   last_known_scroll_position = window.scrollY;
