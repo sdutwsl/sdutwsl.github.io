@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+        <head>
+                <meta charset="utf-8" />
+                <title>载入中...</title>
+                <style>
+                        *{
+                                color:#333;
+                                margin:0;
+                                padding:0;
+                        }
+                        body{
+                                max-width:40em;
+                                margin:auto;
+                        }
+                        .title{
+                                text-align:center;
+                        }
+                        .content{
+                                text-indent:2em;
+                        }
+                        .time{
+                                text-align:right;
+                                font-size:0.8em;
+                                color:#999;
+                        }
+                </style>
+        </head>
+        <body>
+                <h1 id="title" class="title"></h1>
+                <article id="content" class="article"></article>
+                <div id="time" class="time"></div>
+                <script>
+                        let id=(new URLSearchParams(new URL(window.location).search)).get("id")
+                        window.addEventListener("load",async ()=>{
+                                fetch("http://sdutwsl.online/API/V1/GetArticle",{
+                                        body:JSON.stringify({
+                                                ID:parseInt(id)
+                                        }),
+                                        cache:'no-cache',
+                                        headers:{
+                                                'content-type':'application/json',
+                                        },
+                                        method:'POST',
+                                        referrer:'no-referrer',
+                                        }).then(res=>res.json()).catch(console.log).then(
+                                                res=>{
+                                                        let a=res[0]
+                                                        let title=a["Title"]
+                                                        let content=a["Content"]
+                                                        let time=a["PostTime"]
+                                                        document.querySelector("#title").innerText=title
+                                                        document.querySelector("#content").innerText=content
+                                                        document.querySelector("#time").innerText=time
+                                                }
+                                        )
+                        })
+                </script>
+        </body>
+</html>
